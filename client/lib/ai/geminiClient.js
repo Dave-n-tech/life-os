@@ -3,7 +3,7 @@ import { GoogleGenAI, Modality } from "@google/genai";
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_APIKEY });
 
-export const generateMessageContent = async (prompt) => {
+export const generateMotivationalMessage = async (prompt) => {
   const response = await ai.models.generateContent({
     model: "gemini-2.0-flash",
     contents: prompt,
@@ -12,7 +12,7 @@ export const generateMessageContent = async (prompt) => {
   return res;
 };
 
-export const generateMessageImage = async (prompt) => {
+export const generateImageFromPrompt = async (prompt) => {
   const response = await ai.models.generateContent({
     model: "gemini-2.0-flash-preview-image-generation",
     contents: prompt,
